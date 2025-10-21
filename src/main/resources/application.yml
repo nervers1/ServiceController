@@ -1,0 +1,21 @@
+server:
+  port: 9000
+
+#spring:
+#  cloud:
+#    gateway:
+#      server:
+#        webmvc:
+#          routes:
+#            - id: server-a
+#              uri: http://localhost:9001
+#              predicates:
+#                - Path=/api/v1/ord/**,/api/v1/oms/**
+#              filters:
+#                - StripPrefix=1
+#            - id: server-b
+#              uri: http://localhost:9002
+#              predicates:
+#                - Path=/api/b/**
+#              filters:
+#                - StripPrefix=1
