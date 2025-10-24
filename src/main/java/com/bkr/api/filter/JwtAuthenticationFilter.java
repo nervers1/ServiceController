@@ -1,4 +1,4 @@
-package com.bkr.api.config;
+package com.bkr.api.filter;
 
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
@@ -15,8 +15,8 @@ public class JwtAuthenticationFilter implements GlobalFilter {
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         String token = exchange.getRequest().getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
         if (token != null && token.startsWith("Bearer ")) {
-            String jwt = token.substring(7);
-            // JWT 검증 로직 (생략 가능)
+                String jwt = token.substring(7);
+                // JWT 검증 로직 (생략 가능)
         } else {
             exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
             return exchange.getResponse().setComplete();

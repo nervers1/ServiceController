@@ -1,6 +1,15 @@
 server:
   port: 9000
 
+gateway:
+  order-paths:
+    - /api/v1/ord
+    - /api/v1/oms
+
+spring:
+  main:
+    web-application-type=reactive: reactive
+
 #spring:
 #  cloud:
 #    gateway:
